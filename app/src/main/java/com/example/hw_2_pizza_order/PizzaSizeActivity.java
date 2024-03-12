@@ -17,9 +17,7 @@ import com.example.hw_2_pizza_order.entities.PizzaTopping;
 import com.example.hw_2_pizza_order.entities.ToppingCount;
 
 public class PizzaSizeActivity extends AppCompatActivity implements View.OnClickListener {
-
     private RadioGroup rgPizzaSize;
-
     private ImageView ivMinusMeat;
     private ImageView ivPlusMeat;
     private ImageView ivMinusMushroom;
@@ -45,8 +43,6 @@ public class PizzaSizeActivity extends AppCompatActivity implements View.OnClick
         setListener();
         initData();
     }
-
-
 
     private void initView() {
         rgPizzaSize = findViewById(R.id.rgPizzaSize);
@@ -157,21 +153,32 @@ public class PizzaSizeActivity extends AppCompatActivity implements View.OnClick
     private void changeOrderToppingsList() {
         order.getToppingCountList().clear();
         if(!tvCountMeat.getText().equals("0")){
-            ToppingCount toppingCount = new ToppingCount(PizzaTopping.MEAT, Integer.parseInt(tvCountMeat.getText().toString()));
+            ToppingCount toppingCount =
+                    new ToppingCount(
+                            PizzaTopping.MEAT,
+                            Integer.parseInt(tvCountMeat.getText().toString()));
             order.addToppingCount(toppingCount);
         }
         if(!tvCountMushroom.getText().equals("0")){
-            ToppingCount toppingCount = new ToppingCount(PizzaTopping.MUSHROOMS, Integer.parseInt(tvCountMushroom.getText().toString()));
+            ToppingCount toppingCount =
+                    new ToppingCount(
+                            PizzaTopping.MUSHROOMS,
+                            Integer.parseInt(tvCountMushroom.getText().toString()));
             order.addToppingCount(toppingCount);
         }
         if(!tvCountCheese.getText().equals("0")){
-            ToppingCount toppingCount = new ToppingCount(PizzaTopping.CHEESE, Integer.parseInt(tvCountCheese.getText().toString()));
+            ToppingCount toppingCount =
+                    new ToppingCount(
+                            PizzaTopping.CHEESE,
+                            Integer.parseInt(tvCountCheese.getText().toString()));
             order.addToppingCount(toppingCount);
         }
     }
 
     private void changeToppingsCounter(TextView tvCounter, boolean isPlus) {
         int counter = Integer.parseInt(tvCounter.getText().toString());
-        tvCounter.setText(isPlus ? (counter < 3 ? "" + (counter + 1) : "" + counter) : (counter > 0 ? "" + (counter - 1) : "" + counter));
+        tvCounter.setText(
+                isPlus ? (counter < 3 ? "" + (counter + 1) :
+                        "" + counter) : (counter > 0 ? "" + (counter - 1) : "" + counter));
     }
 }

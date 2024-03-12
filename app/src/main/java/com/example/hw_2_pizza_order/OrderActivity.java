@@ -42,10 +42,6 @@ public class OrderActivity extends AppCompatActivity {
         initData();
     }
 
-
-
-
-
     private void initView() {
         tvPizzaRecipe = findViewById(R.id.tvPizzaRecipe);
         tvPizzaSize = findViewById(R.id.tvPizzaSize);

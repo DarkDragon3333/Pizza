@@ -1,47 +1,39 @@
 <resources>
     <string name="app_name">HW_2_pizza_order</string>
-    <string name="tvMenu">Меню</string>
-    <string name="tvPizza1">Гавайська</string>
-    <string name="tvDescriptionPizza1">Куряче філе, ананас, шампіньйони, зелень, моцарелла, фірмовий соус.</string>
-    <string name="tvPizza2">Карбонара</string>
-    <string name="tvDescriptionPizza2">Бекон, шинка, шампіньйони, цибуля маринована, оливки, моцарелла, фірмовий соус.</string>
-    <string name="tvPizza3">Мисливська</string>
-    <string name="tvDescriptionPizza3">Мисливські ковбаски, салямі, солоний огірок, цибуля маринована, моцарелла, фірмовий соус.</string>
-    <string name="btnShowActivitySize">Розмір і добавки</string>
+    <string name="tvMenu">Меню </string>
+    <string name= "tvPizza1" > Гавайский </string>
+    <string name="tvDescriptionPizza1">Куриное филе, ананас, шампиньоны, зелень, моцарелла, фирменный соус.</string>
+    <string name="tvPizza2">Карбонара </string>
+    <string name="tvDescriptionPizza2">Бекон, ветчина, шампиньоны, маринованный лук, оливки, моцарелла, фирменный соус.</string>
+    <string name= "tvPizza3" > охотничья </string>
+    <string name="tvDescriptionPizza3">охотничьи колбаски, салями, соленый огурец, лук маринованный, моцарелла, фирменный соус.</string>
+    <string name= "btnShowActivitySize" > размер и добавки </string>
     <string name="tvCountPizza">-</string>
-    <string name="messageChooseRecipe">Оберіть рецепт піци</string>
-
-    <string name="tvSize">Розмір</string>
-    <string name="rBtnLarge">Велика - 60 см</string>
-    <string name="rBtnMedium">Середня - 40 см</string>
-    <string name="rBtnSmall">Маленька - 20 см</string>
-
-    <string name="tvToppings">Добавки</string>
-
-    <string name="btnMakeOrder">замовити</string>
-
-    <string name="tvMeat">МʼЯСО</string>
-    <string name="tvMushroom">ГРИБИ</string>
-    <string name="tvCheese">СИР</string>
+    <string name= "messageChooseRecipe" > выберите рецепт пиццы</string>
+    <string name= "tvSize" >размер</string >
+    <string name="rBtnLarge">большая - 60 см </string>
+    <string name="rBtnMedium">средняя - 40 см </string>
+    <string name="rBtnSmall" >маленькая - 20 см </string>
+    <string name="tvToppings">Добавки </string>
+    <string name="btnMakeOrder">заказать </string>
+    <string name="tvMeat">мясо </string>
+    <string name="tvMushroom">грибы </string>
+    <string name="tvCheese">сыр </string>
     <string name="tvStartCountToppings">0</string>
-
-
-    <string name="tvYourOrder">Ваше замовлення</string>
-    <string name="tvPizzaRecipeLabel">Рецепт Піци</string>
-    <string name="tvPizzaRecipe">Рецепт піци</string>
-    <string name="tvPizzaSizeLabel">Розмір</string>
-    <string name="tvPizzaAmountLabel">Кількість</string>
-    <string name="tvPizzaAmount">кількість</string>
-    <string name="tvToppingsLabel">Добавки</string>
-    <string name="tvTopping">без добавок</string>
-    <string name="tvPriceLabel">Вартіcть</string>
+    <string name= "tvYourOrder" >ваш заказ</string >
+    <string name= "tvPizzaRecipeLabel" >рецепт пиццы</string >
+    <string name= "tvPizzaRecipe" >рецепт пиццы</string >
+    <string name= "tvPizzaSizeLabel" >размер</string >
+    <string name="tvPizzaAmountLabel">количество </string>
+    <string name="tvPizzaAmount">количество </string>
+    <string name="tvToppingsLabel">Добавки </string>
+    <string name= "tvTopping" >Без добавок</string >
+    <string name= "tvPriceLabel" >Стоимость</string >
     <string name="tvPrice">$000</string>
-    <string name="etPhone">Введіть ваш телефон</string>
-    <string name="etPersonName">Введіть ваше імʼя</string>
-    <string name="btnOrder">Замовити</string>
-    <string name="messageInputYourData">Введіть свої імʼя та телевон</string>
-    <string name="messageOrder">Ваше замовлення прйнято, очікуйте на дзвінок</string>
-    <string name="currencyType"> грн</string>
-
-
+    <string name="etPhone">Введите Ваш телефон </string>
+    <string name="etPersonName">введите ваше имя </string>
+    <string name="btnOrder">Заказать </string>
+    <string name="messageInputYourData">введите свои имя и televon </string>
+    <string name="messageOrder">Ваш заказ прйнят, ожидайте звонок</string>
+    <string name="currencyType"> руб. </string>
 </resources>
