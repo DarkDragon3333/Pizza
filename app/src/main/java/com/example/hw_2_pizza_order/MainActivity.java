@@ -1,27 +1,17 @@
 package com.example.hw_2_pizza_order;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.hw_2_pizza_order.entities.ConstantsStore;
-import com.example.hw_2_pizza_order.entities.Order;
-import com.example.hw_2_pizza_order.entities.PizzaRecipe;
-import com.google.android.material.navigation.NavigationView;
+import com.example.hw_2_pizza_order.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,20 +19,21 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.file.Files;
 import java.util.ArrayList;
-
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements Navigation {
     SQLiteDatabase db;
     File dbFile;
     ArrayList<Pizza> pizzas = new ArrayList<Pizza>();
     DataBasePizzaManager databaseHelper;
-    SQLiteDatabase db;
     Cursor userCursor;
     SimpleCursorAdapter userAdapter;
+    ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         dbFile = getBaseContext().getDatabasePath("Pizza.bd");
         if (!dbFile.exists()) {
@@ -72,18 +63,58 @@ public class MainActivity extends AppCompatActivity{
 
         // Собираем данные из курсора и выводим в textView
         StringBuilder stringBuilder = new StringBuilder();
-        while (cursor.moveToNext()) {
+        /*while (cursor.moveToNext()) {
             String name = cursor.getString(cursor.getColumnIndex("name"));
             String description = cursor.getString(cursor.getColumnIndex("description"));
             stringBuilder.append("Name: ").append(name).append(", Description: ").append(description).append("\n");
         }
-        textView.setText(stringBuilder.toString());
+        textView.setText(stringBuilder.toString());*/
 
         // Закрываем курсор и базу данных
         cursor.close();
         db.close();
 
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            Intent intent, intent1;
+            switch (item.getItemId()){
+                case R.id.basket:
+                    intent = new Intent(MainActivity.this, Basket.class);
+                    startActivity(intent);
+                    break;
+                case R.id.about:
+                    intent1 = new Intent(MainActivity.this, About_program.class);
+                    startActivity(intent1);
+                    break;
+            }
+            return true;
+        });
+
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setSelectedItemId(R.id.Menu); // Замените на соответствующий элемент вашей активити
+        navigation_function();
+    }
 
+    @Override
+    public void navigation_function() {
+        binding.bottomNavigationView.setOnItemSelectedListener(item -> {
+            Intent intent;
+            switch (item.getItemId()){
+                case R.id.about:
+                    intent = new Intent(MainActivity.this, About_program.class);
+                    startActivity(intent);
+                    break;
+                case R.id.basket:
+                    intent = new Intent(MainActivity.this, Basket.class);
+                    startActivity(intent);
+                    break;
+
+            }
+            return true;
+        });
+    }
 }

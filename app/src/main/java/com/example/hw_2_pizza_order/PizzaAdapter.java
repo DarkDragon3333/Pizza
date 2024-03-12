@@ -34,11 +34,8 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder>{
         holder.flagView.setImageResource(pizza.getPicture());
         holder.nameView.setText(pizza.getName());
         holder.recipeView.setText(pizza.getRecipe());
-        holder.button_with_price.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        holder.button_with_price.setOnClickListener(view -> {
 
-            }
         });
     }
 
