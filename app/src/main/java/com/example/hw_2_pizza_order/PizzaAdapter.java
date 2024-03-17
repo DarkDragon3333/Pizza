@@ -4,26 +4,28 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.List;
+import java.util.ArrayList;
 
 public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder>{
-    private final LayoutInflater inflater; //XML для данных
-    private final List<Pizza> pizzas; //Массив с данными
+    private LayoutInflater inflater; //XML для данных
+    Context context;
+    ArrayList<Pizza> pizzas;
 
     //Конструктор адаптера
-    PizzaAdapter(Context context, List<Pizza> pizzas) {
+    PizzaAdapter(Context context, ArrayList<Pizza> pizzas) {
+        this.context = context;
         this.pizzas = pizzas;
-        this.inflater = LayoutInflater.from(context);
     }
 
+    @NonNull
     @Override
     public PizzaAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        inflater = LayoutInflater.from(context);
+
         View view = inflater.inflate(R.layout.list_of_pizzas, parent, false);
         return new ViewHolder(view);
     }
@@ -32,28 +34,26 @@ public class PizzaAdapter extends RecyclerView.Adapter<PizzaAdapter.ViewHolder>{
     public void onBindViewHolder(PizzaAdapter.ViewHolder holder, int position) {
         Pizza pizza = pizzas.get(position);
         holder.flagView.setImageResource(pizza.getPicture());
-        holder.nameView.setText(pizza.getName());
-        holder.recipeView.setText(pizza.getRecipe());
-        holder.button_with_price.setOnClickListener(view -> {
-
-        });
+        holder.name.setText(pizza.getName());
+        holder.recipe.setText(pizza.getRecipe());
+        holder.twenty_four.setText(pizza.getTwenty_four_price());
     }
 
     @Override
     public int getItemCount() {
         return pizzas.size();
     }
+
     //Получаем view, в которые будет вставлять данные
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        final ImageView flagView;
-        final TextView nameView, recipeView;
-        final Button button_with_price;
+        ImageView flagView;
+        TextView id, name, recipe, eighteen, twenty_four, thirty;
         ViewHolder(View view){
             super(view);
-            flagView = view.findViewById(R.id.pizza_Photo);
-            nameView = view.findViewById(R.id.name_of_pizza);
-            recipeView = view.findViewById(R.id.tvPizzaRecipe);
-            button_with_price = view.findViewById((R.id.button_with_price));
+            flagView = view.findViewById(R.id.pizza_photo);
+            name = view.findViewById(R.id.name_of_pizza);
+            recipe = view.findViewById(R.id.tvPizzaRecipe);
+            twenty_four = view.findViewById((R.id.tvPizzaPrice));
         }
     }
 }

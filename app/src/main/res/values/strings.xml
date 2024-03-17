@@ -1,34 +1,34 @@
 <resources>
     <string name="app_name">HW_2_pizza_order</string>
     <string name="tvMenu">Меню </string>
-    <string name= "tvPizza1" > Гавайский </string>
+    <string name="tvPizza1"> Гавайский </string>
     <string name="tvDescriptionPizza1">Куриное филе, ананас, шампиньоны, зелень, моцарелла, фирменный соус.</string>
     <string name="tvPizza2">Карбонара </string>
     <string name="tvDescriptionPizza2">Бекон, ветчина, шампиньоны, маринованный лук, оливки, моцарелла, фирменный соус.</string>
-    <string name= "tvPizza3" > охотничья </string>
+    <string name="tvPizza3"> охотничья </string>
     <string name="tvDescriptionPizza3">охотничьи колбаски, салями, соленый огурец, лук маринованный, моцарелла, фирменный соус.</string>
-    <string name= "btnShowActivitySize" > размер и добавки </string>
+    <string name="btnShowActivitySize"> размер и добавки </string>
     <string name="tvCountPizza">-</string>
-    <string name= "messageChooseRecipe" > выберите рецепт пиццы</string>
-    <string name= "tvSize" >размер</string >
+    <string name="messageChooseRecipe"> выберите рецепт пиццы</string>
+    <string name="tvSize">размер</string>
     <string name="rBtnLarge">большая - 60 см </string>
     <string name="rBtnMedium">средняя - 40 см </string>
-    <string name="rBtnSmall" >маленькая - 20 см </string>
+    <string name="rBtnSmall">маленькая - 20 см </string>
     <string name="tvToppings">Добавки </string>
     <string name="btnMakeOrder">заказать </string>
     <string name="tvMeat">мясо </string>
     <string name="tvMushroom">грибы </string>
     <string name="tvCheese">сыр </string>
     <string name="tvStartCountToppings">0</string>
-    <string name= "tvYourOrder" >ваш заказ</string >
-    <string name= "tvPizzaRecipeLabel" >рецепт пиццы</string >
-    <string name= "tvPizzaRecipe" >рецепт пиццы</string >
-    <string name= "tvPizzaSizeLabel" >размер</string >
+    <string name="tvYourOrder">ваш заказ</string>
+    <string name="tvPizzaRecipeLabel">рецепт пиццы</string>
+    <string name="tvPizzaRecipe">рецепт пиццы</string>
+    <string name="tvPizzaSizeLabel">размер</string>
     <string name="tvPizzaAmountLabel">количество </string>
     <string name="tvPizzaAmount">количество </string>
     <string name="tvToppingsLabel">Добавки </string>
-    <string name= "tvTopping" >Без добавок</string >
-    <string name= "tvPriceLabel" >Стоимость</string >
+    <string name="tvTopping">Без добавок</string>
+    <string name="tvPriceLabel">Стоимость</string>
     <string name="tvPrice">$000</string>
     <string name="etPhone">Введите Ваш телефон </string>
     <string name="etPersonName">введите ваше имя </string>
@@ -43,4 +43,6 @@
     <string name="menu">Menu</string>
     <string name="basket">Basket</string>
     <string name="about_program">About program</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
